@@ -1,0 +1,47 @@
+package org.stepdefanition;
+
+import java.io.IOException;
+
+import org.baseclass.OleoBaseClass;
+import org.oleopojo.OleoPojoClass;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class OleostepdefanitionClass extends OleoBaseClass{
+
+
+@Given("User have to launchnbrowser and Url")
+public void user_have_to_launchnbrowser_and_Url() throws InterruptedException {
+   launchChromeBrowser();
+   launchURL("https://simulate.digitaltrains.online/account/login");
+   wait5seconds();
+}
+
+OleoPojoClass p;
+@When("User have to enter incorrect user name incorrect password")
+public void user_have_to_enter_incorrect_user_name_incorrect_password() {
+  p =new OleoPojoClass();
+    sendKeys(p.getUsernamebox(),"hemkumar");
+    sendKeys(p.getPasswordbox(),"123456");
+    
+    
+}
+
+@When("User have to click Remminder button and loginbutton")
+public void user_have_to_click_Remminder_button_and_loginbutton(){
+	elementClick(p.getRemebermebutton());
+	elementClick(p.getLoginsubmit());
+
+	
+}
+
+
+@Then("User have close the tab")
+public void user_have_close_the_tab() throws InterruptedException, IOException {
+
+  closeTab();
+}
+
+}
