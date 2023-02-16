@@ -1,47 +1,176 @@
 package org.stepdefanition;
 
-import java.io.IOException;
-
-import org.baseclass.OleoBaseClass;
-import org.oleopojo.OleoPojoClass;
+import org.base.OleoBaseClass;
+import org.pojo.OleoPojoClass;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class OleostepdefanitionClass extends OleoBaseClass{
+public class OleoStepdefanitionClass extends OleoBaseClass {
+	@Given("User have launch browser and URL")
+	public void user_have_launch_browser_and_URL() {
+		launchChromeBrowser();
+		launchURL("https://simulate.digitaltrains.online/account/login");
+		implicitWait();
 
+	}
 
-@Given("User have to launchnbrowser and Url")
-public void user_have_to_launchnbrowser_and_Url() throws InterruptedException {
-   launchChromeBrowser();
-   launchURL("https://simulate.digitaltrains.online/account/login");
-   wait5seconds();
-}
+	OleoPojoClass o;
 
-OleoPojoClass p;
-@When("User have to enter incorrect user name incorrect password")
-public void user_have_to_enter_incorrect_user_name_incorrect_password() {
-  p =new OleoPojoClass();
-    sendKeys(p.getUsernamebox(),"hemkumar");
-    sendKeys(p.getPasswordbox(),"123456");
-    
-    
-}
+	@Given("User have to fill userid and password")
+	public void user_have_to_fill_userid_and_password() {
+		o = new OleoPojoClass();
+		sendKeys(o.getLoginusername(), "Hemkumar");
+		sendKeys(o.getLoginpassword(), "123456");
+	}
 
-@When("User have to click Remminder button and loginbutton")
-public void user_have_to_click_Remminder_button_and_loginbutton(){
-	elementClick(p.getRemebermebutton());
-	elementClick(p.getLoginsubmit());
+	@When("User have to click submit button")
+	public void user_have_to_click_submit_button() {
+		elementClick(o.getLoginremember());
+		elementClick(o.getLoginsubmit());
+	}
 
-	
-}
+	@Then("User have to close the tab")
+	public void user_have_to_close_the_tab() {
+		closeTab();
+	}
 
+	@Given("User have to launch browser and URL")
+	public void user_have_to_launch_browser_and_URL() {
+		launchChromeBrowser();
+		launchURL("https://simulate.digitaltrains.online");
 
-@Then("User have close the tab")
-public void user_have_close_the_tab() throws InterruptedException, IOException {
+	}
 
-  closeTab();
-}
+	@Given("User have to fill the name,phone number,mail id and fill the massagebox")
+	public void user_have_to_fill_the_name_phone_number_mail_id_and_fill_the_massagebox() {
+		sendKeys(o.getContactyourname(), "hemkumar");
+		sendKeys(o.getContactphonenumber(), "9944406259");
+		sendKeys(o.getContactemail(), "hemkumardeavrajan@gmail.com");
+		sendKeys(o.getContactmessage(), "What are the prducts avilable");
+	}
+
+	@When("User have to select drop option")
+	public void user_have_to_select_drop_option() {
+		selectByIndex(o.getContactreasonforcontacting(), 1);
+
+	}
+
+	@When("User have to click the submit button")
+	public void user_have_to_click_the_submit_button() {
+		elementClick(o.getContactsubmit());
+
+	}
+
+	@Then("User have to get a massage")
+	public void user_have_to_get_a_massage() {
+
+	}
+
+	@When("User have to click the about button")
+	public void user_have_to_click_the_about_button() {
+		elementClick(o.getDigitaltrainsaboutbutton());
+
+	}
+
+	@Then("User have to enter on about URL")
+	public void user_have_to_enter_on_about_URL() {
+
+	}
+
+	@When("User have to click the feature button")
+	public void user_have_to_click_the_feature_button() {
+		elementClick(o.getDigitaltrainsfeatures1());
+
+	}
+
+	@Then("User have to enter on feature URL")
+	public void user_have_to_enter_on_feature_URL() {
+
+	}
+
+	@Given("User have to launch Browser and URL")
+	public void user_have_to_launch_Browser_and_URL() {
+
+		launchChromeBrowser();
+		launchURL("");
+	}
+
+	@When("User have to click the contact button")
+	public void user_have_to_click_the_contact_button() {
+		elementClick(o.getDigitaltrainscontactbutton());
+
+	}
+
+	@Then("User have to enter on contact URL")
+	public void user_have_to_enter_on_contact_URL() {
+
+	}
+
+	@When("User have to click the gettouch button")
+	public void user_have_to_click_the_gettouch_button() {
+		elementClick(o.getDigitaltrainsgetintouchbutton());
+
+	}
+
+	@When("User have to click the subscribe button")
+	public void user_have_to_click_the_subscribe_button() {
+
+		elementClick(o.getDigitaltarinssubscribebutton());
+	}
+
+	@When("User have to click the youtube button")
+	public void user_have_to_click_the_youtube_button() {
+
+	}
+
+	@Then("User have to enter youtube window")
+	public void user_have_to_enter_youtube_window() {
+
+	}
+
+	@When("User have to click the tarin running gettouch button")
+	public void user_have_to_click_the_tarin_running_gettouch_button() {
+		elementClick(o.getTrainrunninggetintouch());
+
+	}
+
+	@When("User have to click the crash energy manage gettouch button")
+	public void user_have_to_click_the_crash_energy_manage_gettouch_button() {
+
+	}
+
+	@When("User have to click the buffer stops gettouch button")
+	public void user_have_to_click_the_buffer_stops_gettouch_button() {
+
+	}
+
+	@Given("User have to minimize the page")
+	public void user_have_to_minimize_the_page() {
+		screenMaximize();
+
+	}
+
+	@When("User have to click menu button")
+	public void user_have_to_click_menu_button() {
+		elementClick(o.getDigitaltrainsmenubar());
+
+	}
+
+	@Then("User have to see all options")
+	public void user_have_to_see_all_options() {
+
+	}
+
+	@When("User have to click login button")
+	public void user_have_to_click_login_button() {
+		elementClick(o.getDigitaltrainsloginbutton());
+	}
+
+	@Then("User have to enter login page")
+	public void user_have_to_enter_login_page() {
+
+	}
 
 }
