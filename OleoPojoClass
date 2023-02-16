@@ -1,197 +1,321 @@
-package org.oleopojo;
+package org.pojo;
 
-import org.baseclass.OleoBaseClass;
+import org.base.OleoBaseClass;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class OleoPojoClass extends OleoBaseClass {
 	public OleoPojoClass() {
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath = "(//a[text()='Homepage'])[1]")
-	private WebElement HomeButton;
+//login page locators
+
 	@FindBy(xpath = "//a[text()='Login']")
-	private WebElement LoginButton;
-	@FindBy(xpath = "//a[text()='Contact Us']")
-	private WebElement ContactUs;
-	@FindBy(xpath ="//a[text()='Get Started']")
-	private WebElement Getstarted;
-	@FindBy(xpath = "//a[text()='Devices']")
-	private WebElement Devices;
-	@FindBy(xpath ="//a[text()='Interfaces']")
-	private WebElement Interfaces;
-	@FindBy(xpath = "//a[text()='Buffer Stops']")
-	private WebElement Bufferstops;
-	@FindBy(xpath = "//a[text()='Vehicles']")
-	private WebElement Vehicles;
-	@FindBy(xpath = "//a[text()='Trains']")
-	private WebElement Trains;
-	@FindBy(xpath = "//a[text()='Getting Started']")
-	private WebElement Gettingstarted;
-	@FindBy(xpath = "//a[text()='Create Train Impact Simulation']")
-	private WebElement cratetrainimpactsimulation;
-	@FindBy(xpath = "//a[text()='Create Buffer Stop Impact Simulation']")
-	private WebElement Createbufferstopimpactsimulation;
-	@FindBy(xpath = "//a[text()='DigitalTrains']")
-	private WebElement Digitaltrains;
-	@FindBy(xpath = "(//a[text()='Homepage'])[2]")
-	private WebElement Homepage;
-	@FindBy(className = "help-button-contents")
-	private WebElement HelpButton;
-	@FindBy(id = "search_input_react")
-	private WebElement Searchbox;
-	@FindBy(className = "nav-link")
-	private WebElement AboutButton;
-	@FindBy(id="menu-item-12")
-	private WebElement Features;
-	@FindBy(id = "menu-item-14")
-	private WebElement Contact;
-	@FindBy(id = "menu-item-13")
-	private WebElement Login;
-	@FindBy(className = "purple")
-	private WebElement Getintouch;
-	@FindBy(xpath = "//a[text()='Subscribe']")
-	private WebElement Subscribe;
-	@FindBy(name = "your-name")
-	private WebElement Yourname;
-	@FindBy(name = "email")
-	private WebElement Email;
-	@FindBy(name = "phone")
-	private WebElement phone;
-	@FindBy(name = "query")
-	private WebElement Resoneforcontaction;
-	@FindBy(name = "message")
-	private WebElement Messagebox;
-	@FindBy(xpath = "//input[@value='Submit']")
-	private WebElement Submitbutton;
+	private WebElement Degitaltarinsloginbutton;
 	@FindBy(id = "modal-login-email")
-	private WebElement Usernamebox;
+	private WebElement Loginusername;
 	@FindBy(id = "modal-login-password")
-	private WebElement Passwordbox;
+	private WebElement Loginpassword;
 	@FindBy(id = "remember")
-	private WebElement Remebermebutton;
-	@FindBy(xpath = "//input[@value=\"Submit\"]")
+	private WebElement Loginremember;
+	@FindBy(xpath = "//input[@name='submit']")
 	private WebElement Loginsubmit;
-	public WebElement getHomeButton() {
-		return HomeButton;
-	}
-	public WebElement getLoginButton() {
-		return LoginButton;
-	}
-	public WebElement getContactUs() {
-		return ContactUs;
-	}
-	public WebElement getGetstarted() {
-		return Getstarted;
-	}
-	public WebElement getDevices() {
-		return Devices;
-	}
-	public WebElement getInterfaces() {
-		return Interfaces;
-	}
-	public WebElement getBufferstops() {
-		return Bufferstops;
-	}
-	public WebElement getVehicles() {
-		return Vehicles;
-	}
-	public WebElement getTrains() {
-		return Trains;
-	}
-	public WebElement getGettingstarted() {
-		return Gettingstarted;
-	}
-	public WebElement getCratetrainimpactsimulation() {
-		return cratetrainimpactsimulation;
-	}
-	public WebElement getCreatebufferstopimpactsimulation() {
-		return Createbufferstopimpactsimulation;
-	}
-	public WebElement getDigitaltrains() {
-		return Digitaltrains;
-	}
-	public WebElement getHomepage() {
-		return Homepage;
-	}
-	public WebElement getHelpButton() {
-		return HelpButton;
-	}
-	public WebElement getSearchbox() {
-		return Searchbox;
-	}
-	public WebElement getAboutButton() {
-		return AboutButton;
-	}
-	public WebElement getFeatures() {
-		return Features;
-	}
-	public WebElement getContact() {
-		return Contact;
-	}
-	public WebElement getLogin() {
-		return Login;
-	}
-	public WebElement getGetintouch() {
-		return Getintouch;
-	}
-	public WebElement getSubscribe() {
-		return Subscribe;
-	}
-	public WebElement getYourname() {
-		return Yourname;
-	}
-	public WebElement getEmail() {
-		return Email;
-	}
-	public WebElement getPhone() {
-		return phone;
-	}
-	public WebElement getResoneforcontaction() {
-		return Resoneforcontaction;
-	}
-	public WebElement getMessagebox() {
-		return Messagebox;
-	}
-	public WebElement getSubmitbutton() {
-		return Submitbutton;
-	}
-	public WebElement getUsernamebox() {
-		return Usernamebox;
-	}
-	public WebElement getPasswordbox() {
-		return Passwordbox;
-	}
-	public WebElement getRemebermebutton() {
-		return Remebermebutton;
-	}
-	public WebElement getLoginsubmit() {
-		return Loginsubmit;
-	}
+	@FindBy(xpath = "//a[text()='Forgotten Password?']")
+	private WebElement Loginforgottenpassword;
+	@FindBy(id = "forgot-pass-email")
+	private WebElement Forgotpassemail;
+	@FindBy(xpath = "//a[text()='Back to login']")
+	private WebElement Forgotbacktologin;
+	@FindBy(name = "Submit")
+	private WebElement Forgotsubmitbutton;
+	@FindBy(xpath = "//p[text()='A password reset link has been sent, please check your mailbox.']")
+	private WebElement Forgotsubmitaftercomingtext;
+	@FindBy(xpath = "//div[contains(text(),'password were incorrect.')]")
+	private WebElement Loginincorreccomingttext;
+
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//Digital Trains Page locators
+
+	@FindBy(xpath = "//a[text()='About']")
+	private WebElement Digitaltrainsaboutbutton;
+	@FindBy(xpath = "(//a[text()='Features'])[1]")
+	private WebElement Digitaltrainsfeatures1;
+	@FindBy(xpath = "(//a[text()='Features'])[2]")
+	private WebElement Digitaltrainsfeatures2;
+	@FindBy(xpath = "//a[text()='Contact']")
+	private WebElement Digitaltrainscontactbutton;
+	@FindBy(xpath = "(//a[text()='Get In Touch'])[1]")
+	private WebElement Digitaltrainsgetintouchbutton;
+	@FindBy(xpath = "//a[text()='Subscribe']")
+	private WebElement Digitaltarinssubscribebutton;
+	@FindBy(xpath = "(//a[text()='Get In Touch'])[2]")
+	private WebElement Trainrunninggetintouch;
+	@FindBy(xpath = "(//a[text()='Get In Touch'])[3]")
+	private WebElement Crashenergymanagmentgetintouch;
+	@FindBy(xpath = "(//a[text()='Get In Touch'])[4]")
+	private WebElement Bufferstopsgetintouch;
+	@FindBy(xpath = "//a[text()='Login']")
+	private WebElement Digitaltrainsloginbutton;
+	@FindBy(name = "your-name")
+	private WebElement Contactyourname;
+	@FindBy(name = "email")
+	private WebElement Contactemail;
+	@FindBy(name = "phone")
+	private WebElement Contactphonenumber;
+	@FindBy(name = "query")
+	private WebElement Contactreasonforcontacting;
+	@FindBy(name = "message")
+	private WebElement Contactmessage;
+	@FindBy(xpath = "//input[@type='submit']")
+	private WebElement Contactsubmit;
+	@FindBy(className = "fab fa-youtube-square")
+	private WebElement Digitaltrainsyoutubebutton;
+	@FindBy(className = "navbar-toggler-icon")
+	private WebElement Digitaltrainsmenubar;
 	
 	
 	
 
+	// Digital trains support page locators
+
+	@FindBy(xpath = "(//a[text()='Homepage'])[1]")
+	private WebElement Digitaltarinssupporttophomepagebutton;
+	@FindBy(xpath = "//a[text()='Login']")
+	private WebElement Digitaltrainssupportloginbutton;
+	@FindBy(xpath = "(//a[text()='Contact Us'])[1]")
+	private WebElement Digitaltrainssupporttopcontactbutton;
+	@FindBy(xpath = "//a[text()='Get Started']")
+	private WebElement Digitaltrainssupportgetstarted;
+	@FindBy(xpath = "//a[text()='Devices']")
+	private WebElement Digitaltrainssupportdevices;
+	@FindBy(xpath = "//a[text()='Interfaces']")
+	private WebElement Digitaltrainssupportinterface;
+	@FindBy(xpath = "//a[text()='Buffer Stops']")
+	private WebElement Digitaltarainssupportbufferstop;
+	@FindBy(xpath = "//a[text()='Vehicles']")
+	private WebElement Digitaltrainssupportvehicles;
+	@FindBy(xpath = "//a[text()='Trains']")
+	private WebElement Digitaltrainssupporttrains;
+	@FindBy(xpath = "//a[text()='Getting Started']")
+	private WebElement Digitaltrainssupportgettingstarted;
+	@FindBy(xpath = "//a[text()='Create Train Impact Simulation']")
+	private WebElement Digitaltrainssupportcreatetrainimpactsimulation;
+	@FindBy(xpath = "//a[text()='Create Buffer Stop Impact Simulation']")
+	private WebElement Digitaltrainssupportcreatebufferstopimpactsimulation;
+	@FindBy(xpath = "//a[text()='DigitalTrains']")
+	private WebElement Digitaltarinssupportdigitaltrainsbutton;
+	@FindBy(xpath = "(//a[text()='Homepage'])[2]")
+	private WebElement Digitaltarinssupportdownhomepagebutton;
+	@FindBy(xpath = "(//a[text()='Contact Us'])[2]")
+	private WebElement Digitaltrainssupportdowncontactbutton;
+	@FindBy(className = "help-button-contents")
+	private WebElement Digitaltrainssupporthelpbutton;
+	@FindBy(id = "search_input_react")
+	private WebElement Digitaltrainssupportsearchbox;
+	@FindBy(id="back-to-top")
+	private WebElement Digitaltrainssupportbacktotop;
+	@FindBy(xpath = "//img[@src='/img/oleo.png']")
+	private WebElement Digitaltrainssupportdigitaltrainsbutton;
+
+	
+	
+	
+	// Getters and Setters
+
+	public WebElement getDegitaltarinsloginbutton() {
+		return Degitaltarinsloginbutton;
+	}
+
+	public WebElement getDigitaltrainsmenubar() {
+		return Digitaltrainsmenubar;
+	}
+
+	public WebElement getLoginincorreccomingttext() {
+		return Loginincorreccomingttext;
+	}
+
+	public WebElement getDigitaltrainssupportbacktotop() {
+		return Digitaltrainssupportbacktotop;
+	}
+
+	public WebElement getLoginusername() {
+		return Loginusername;
+	}
+
+	public WebElement getDigitaltrainsloginbutton() {
+		return Digitaltrainsloginbutton;
+	}
+
+	public WebElement getLoginpassword() {
+		return Loginpassword;
+	}
+
+	public WebElement getLoginremember() {
+		return Loginremember;
+	}
+
+	public WebElement getLoginsubmit() {
+		return Loginsubmit;
+	}
+
+	public WebElement getLoginforgottenpassword() {
+		return Loginforgottenpassword;
+	}
+
+	public WebElement getDigitaltrainsaboutbutton() {
+		return Digitaltrainsaboutbutton;
+	}
+
+	public WebElement getDigitaltrainsfeatures1() {
+		return Digitaltrainsfeatures1;
+	}
+
+	public WebElement getDigitaltrainsfeatures2() {
+		return Digitaltrainsfeatures2;
+	}
+
+	public WebElement getDigitaltrainscontactbutton() {
+		return Digitaltrainscontactbutton;
+	}
+
+	public WebElement getDigitaltrainsgetintouchbutton() {
+		return Digitaltrainsgetintouchbutton;
+	}
+
+	public WebElement getDigitaltarinssubscribebutton() {
+		return Digitaltarinssubscribebutton;
+	}
+
+	public WebElement getTrainrunninggetintouch() {
+		return Trainrunninggetintouch;
+	}
+
+	public WebElement getCrashenergymanagmentgetintouch() {
+		return Crashenergymanagmentgetintouch;
+	}
+
+	public WebElement getBufferstopsgetintouch() {
+		return Bufferstopsgetintouch;
+	}
+
+	public WebElement getContactyourname() {
+		return Contactyourname;
+	}
+
+	public WebElement getContactemail() {
+		return Contactemail;
+	}
+
+	public WebElement getContactphonenumber() {
+		return Contactphonenumber;
+	}
+
+	public WebElement getContactreasonforcontacting() {
+		return Contactreasonforcontacting;
+	}
+
+	public WebElement getContactmessage() {
+		return Contactmessage;
+	}
+
+	public WebElement getContactsubmit() {
+		return Contactsubmit;
+	}
+
+	public WebElement getDigitaltrainssupportdigitaltrainsbutton() {
+		return Digitaltrainssupportdigitaltrainsbutton;
+	}
+
+	public WebElement getDigitaltrainsyoutubebutton() {
+		return Digitaltrainsyoutubebutton;
+	}
+
+	public WebElement getDigitaltarinssupporttophomepagebutton() {
+		return Digitaltarinssupporttophomepagebutton;
+	}
+
+	public WebElement getDigitaltrainssupportloginbutton() {
+		return Digitaltrainssupportloginbutton;
+	}
+
+	public WebElement getDigitaltrainssupporttopcontactbutton() {
+		return Digitaltrainssupporttopcontactbutton;
+	}
+
+	public WebElement getDigitaltrainssupportgetstarted() {
+		return Digitaltrainssupportgetstarted;
+	}
+
+	public WebElement getDigitaltrainssupportdevices() {
+		return Digitaltrainssupportdevices;
+	}
+
+	public WebElement getDigitaltrainssupportinterface() {
+		return Digitaltrainssupportinterface;
+	}
+
+	public WebElement getDigitaltarainssupportbufferstop() {
+		return Digitaltarainssupportbufferstop;
+	}
+
+	public WebElement getDigitaltrainssupportvehicles() {
+		return Digitaltrainssupportvehicles;
+	}
+
+	public WebElement getDigitaltrainssupporttrains() {
+		return Digitaltrainssupporttrains;
+	}
+
+	public WebElement getDigitaltrainssupportgettingstarted() {
+		return Digitaltrainssupportgettingstarted;
+	}
+
+	public WebElement getDigitaltrainssupportcreatetrainimpactsimulation() {
+		return Digitaltrainssupportcreatetrainimpactsimulation;
+	}
+
+	public WebElement getDigitaltrainssupportcreatebufferstopimpactsimulation() {
+		return Digitaltrainssupportcreatebufferstopimpactsimulation;
+	}
+
+	public WebElement getDigitaltarinssupportdigitaltrainsbutton() {
+		return Digitaltarinssupportdigitaltrainsbutton;
+	}
+
+	public WebElement getDigitaltarinssupportdownhomepagebutton() {
+		return Digitaltarinssupportdownhomepagebutton;
+	}
+
+	public WebElement getDigitaltrainssupportdowncontactbutton() {
+		return Digitaltrainssupportdowncontactbutton;
+	}
+
+	public WebElement getDigitaltrainssupporthelpbutton() {
+		return Digitaltrainssupporthelpbutton;
+	}
+
+	public WebElement getDigitaltrainssupportsearchbox() {
+		return Digitaltrainssupportsearchbox;
+	}
+
+	public WebElement getForgotpassemail() {
+		return Forgotpassemail;
+	}
+
+	public WebElement getForgotbacktologin() {
+		return Forgotbacktologin;
+	}
+
+	public WebElement getForgotsubmitbutton() {
+		return Forgotsubmitbutton;
+	}
+
+	public WebElement getForgotsubmitaftercomingtext() {
+		return Forgotsubmitaftercomingtext;
+	}
+
 }
+
